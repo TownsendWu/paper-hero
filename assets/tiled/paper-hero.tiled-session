@@ -1,0 +1,105 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "sence2.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "全部文件 (*)",
+    "fileStates": {
+        "Enemies.json": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "Enemies.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "Player.json": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "Player.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "Tiles.json": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "Tiles.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        },
+        "UI.json": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "UI.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "sence1.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 3,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 319.8333333333333,
+                "y": 159.66666666666669
+            }
+        },
+        "sence2.tmx": {
+            "expandedGroupLayers": [
+                22
+            ],
+            "expandedObjectLayers": [
+                28
+            ],
+            "scale": 2,
+            "selectedLayer": -1,
+            "viewCenter": {
+                "x": -43.25,
+                "y": -6
+            }
+        }
+    },
+    "frame.defaultDuration": 150,
+    "last.exportedFilePath": "/Users/tangswu/Desktop/JavaScript-Game/paper-hero/assets/tiled",
+    "last.imagePath": "/Users/tangswu/Desktop/TiledProject2/PaperHero/Paper-Pixels-8x8",
+    "map.height": 40,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
+    "map.width": 80,
+    "openFiles": [
+        "sence1.tmx",
+        "Player.json",
+        "Enemies.json",
+        "Tiles.json",
+        "UI.json",
+        "sence2.tmx"
+    ],
+    "project": "paper-hero.tiled-project",
+    "property.type": "string",
+    "recentFiles": [
+        "sence1.tmx",
+        "Player.json",
+        "Enemies.json",
+        "Tiles.json",
+        "UI.json",
+        "sence2.tmx",
+        "Player.tsx",
+        "Enemies.tsx",
+        "Tiles.tsx",
+        "UI.tsx"
+    ],
+    "tileset.lastUsedFormat": "json",
+    "tileset.tileSize": {
+        "height": 8,
+        "width": 8
+    }
+}

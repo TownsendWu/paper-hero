@@ -1,0 +1,50 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* background-image: url("./assets/image/b.png") !important;
+  background-repeat: repeat;
+  background-position: 50% 0;
+  background-attachment: fixed; */
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.main canvas {
+  outline: none;
+  /* border: 1px solid #000; */
+}

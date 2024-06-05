@@ -1,0 +1,14 @@
+{ "columns":16,
+ "image":"Paper-Pixels-8x8\/UI.png",
+ "imageheight":136,
+ "imagewidth":128,
+ "margin":0,
+ "name":"UI",
+ "spacing":0,
+ "tilecount":272,
+ "tiledversion":"1.10.2",
+ "tileheight":8,
+ "tilewidth":8,
+ "type":"tileset",
+ "version":"1.10"
+}

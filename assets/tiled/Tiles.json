@@ -1,0 +1,14 @@
+{ "columns":18,
+ "image":"Paper-Pixels-8x8\/Tiles.png",
+ "imageheight":656,
+ "imagewidth":144,
+ "margin":0,
+ "name":"Tiles",
+ "spacing":0,
+ "tilecount":1476,
+ "tiledversion":"1.10.2",
+ "tileheight":8,
+ "tilewidth":8,
+ "type":"tileset",
+ "version":"1.10"
+}
