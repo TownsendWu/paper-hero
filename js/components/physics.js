@@ -1,37 +1,29 @@
-/**
- * 简单的物理引擎
- */
 export class PhysicsComponent {
     constructor(canvasWidth, canvasHeight) {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
-
         this.collisionComponent = new CollisionComponent();
-
-        this.staticEntities = [];
-        this.platformEntities = [];
-        this.objectEntities = [];
-        this.g = 0.3; // 重力加速度
-
+        this.entities = { static: [], platform: [], object: [] };
+        this.g = 0.3;
     }
 
     addEntity(entity) {
-        if (entity.physicsType === 'static') {
-            this.staticEntities.push(entity);
-        }
-        if (entity.physicsType === 'object') {
-            this.objectEntities.push(entity);
-        }
-        if (entity.physicsType === 'platform') {
-            this.platformEntities.push(entity);
-        }
+        this.entities[entity.physicsType].push(entity);
     }
 
     update() {
-        for (const objectEntity of this.objectEntities) {
-            this.checkCollision(objectEntity);
+        for (const objectEntity of this.entities.object) {
             [objectEntity.velocityY, objectEntity.position.y] = this.calcY(objectEntity.velocityY, objectEntity.position.y);
+
+            const collision = this.checkCollision(objectEntity);
+            if (collision) {
+                objectEntity.position.y = collision.y - objectEntity.height;
+                objectEntity.velocityY = 0;
+                continue;
+            }
+
             objectEntity.position.y += objectEntity.velocityY;
+
             if (objectEntity.position.y > this.canvasHeight - objectEntity.height) {
                 objectEntity.position.y = this.canvasHeight - objectEntity.height;
                 objectEntity.velocityY = 0;
@@ -39,62 +31,35 @@ export class PhysicsComponent {
         }
     }
 
-
-
     calcY(velocityY, height) {
-        // 计算自上次更新以来经过的时间
-        // 更新速度和位置
-        velocityY += this.g; // v = u + at
-        height += velocityY
+        velocityY += this.g;
+        height += velocityY;
         return [velocityY, height];
     }
 
     checkCollision(objectEntity) {
-        for (const platform of this.platformEntities) {
+        for (const platform of this.entities.platform) {
             const rectangles = platform.rectangles;
             for (const rectangle of rectangles) {
                 if (this.collisionComponent.detectCollision(objectEntity.position, rectangle)) {
-                    if (objectEntity.velocityY > 0) {
-                        objectEntity.velocityY = 0;
-                        objectEntity.position.y = rectangle.y - objectEntity.height;
+                    if (this.collisionComponent.detectTopCollision(objectEntity.position, rectangle)) {
+                        return rectangle;
                     }
-                    continue;
+
                 }
             }
         }
-
+        return null;
     }
-
 }
 
 class CollisionComponent {
-    constructor() {
+    detectCollision(rectA, rectB) {
+        return rectA.x + rectA.width > rectB.x && rectA.x < rectB.x + rectB.width && rectA.y + rectA.height > rectB.y && rectA.y < rectB.y + rectB.height;
     }
 
-    //碰撞检测
-    detectCollision(entityA, entityB) {
-
-        if (entityA.x + entityA.width > entityB.x &&
-            entityA.x < entityB.x + entityB.width &&
-            entityA.y + entityA.height > entityB.y &&
-            entityA.y < entityB.y + entityB.height) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    detectTopCollision(entityA, entityB) {
-        // Check if entityA is moving downwards and was above entityB in the last frame
-        if (entityA.velocityY > 0 && (entityA.y - entityA.velocityY) < (entityB.y + entityB.height)) {
-            // Now check if they are colliding
-            if (entityA.x < entityB.x + entityB.width &&
-                entityA.x + entityA.width > entityB.x &&
-                entityA.y + entityA.height > entityB.y &&
-                entityA.y < entityB.y + entityB.height) {
-                return true;
-            }
-        }
-        return false;
+    detectTopCollision(rectA, rectB) {
+        console.log(rectA.y,rectA.height,rectB.y)
+        return rectA.y + rectA.height >= rectB.y && rectA.x < rectB.x + rectB.width 
     }
 }

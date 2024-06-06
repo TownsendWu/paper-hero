@@ -7,6 +7,7 @@ export class Platform {
 
         this.frame = platform.frame;
         this.rectangles = platform.rectangles;
+        console.log(this.rectangles)
 
         this.physicsType = "platform";
     }
@@ -17,5 +18,10 @@ export class Platform {
 
     draw() {
         this.ctx.drawImage(this.frame, 0, 0, this.canvasWidth, this.canvasHeight);
+        //绘制矩形，以便观察
+        for (let i = 0; i < this.rectangles.length; i++) {
+            const rectangle = this.rectangles[i];
+            this.ctx.strokeRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+        }
     }
 }

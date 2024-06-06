@@ -17,6 +17,10 @@ export class Hero {
         this.speed = 2;
         this.jumpForce = 4;
 
+        this.jumpCount = 0;
+        this.maxJumpCount = 2;
+
+
         this.currentAnimation = this.animations["rightIdleAnimation"];
         this.currentFrame = 0;
         this.currentDuration = 0;

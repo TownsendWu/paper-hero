@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="8" tileheight="8" infinite="0" nextlayerid="32" nextobjectid="44">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="80" height="40" tilewidth="8" tileheight="8" infinite="0" nextlayerid="32" nextobjectid="45">
  <editorsettings>
-  <export target="sence4.json" format="json"/>
+  <export target="sence3.json" format="json"/>
  </editorsettings>
  <tileset firstgid="1" source="Tiles.tsx"/>
  <tileset firstgid="1477" source="UI.tsx"/>
@@ -374,5 +374,6 @@
   <object id="41" x="432" y="200" width="112" height="8"/>
   <object id="42" x="544" y="192" width="8" height="16"/>
   <object id="43" x="552" y="168" width="88" height="24"/>
+  <object id="44" x="40" y="-40"/>
  </objectgroup>
 </map>
